@@ -67,7 +67,7 @@ const registerUser = async (req, res) => {
     } else if (user.role === 'scrapDealer') {
       await ScrapDealer.create({ 
         user: user._id, 
-        dealerName: user.name,
+        dealerName: req.body.dealerName || user.name,
         location: userLocation, 
         area: area || '',
         district: district || '',
