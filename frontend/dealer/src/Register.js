@@ -48,7 +48,7 @@ const Register = ({ setToken, onSwitch }) => {
       const response = await fetch(`${process.env.REACT_APP_API_URL || 'http://localhost:5000'}/api/auth/register`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...formData, role: 'scrapDealer' })
+        body: JSON.stringify({ ...formData, role: 'dealer' })
       });
       const data = await response.json();
       if (data.success) {
