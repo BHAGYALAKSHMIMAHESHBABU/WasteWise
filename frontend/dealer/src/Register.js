@@ -23,12 +23,22 @@ const Register = ({ setToken, onSwitch }) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  // const handleWasteToggle = (type) => {
+  //   const updated = formData.acceptedWasteTypes.includes(type)
+  //     ? formData.acceptedWasteTypes.filter(t => t !== type)
+  //     : [...formData.acceptedWasteTypes, type];
+  //   setFormData({ ...formData, acceptedWasteTypes: updated });
+  // };
   const handleWasteToggle = (type) => {
-    const updated = formData.acceptedWasteTypes.includes(type)
-      ? formData.acceptedWasteTypes.filter(t => t !== type)
-      : [...formData.acceptedWasteTypes, type];
-    setFormData({ ...formData, acceptedWasteTypes: updated });
-  };
+  console.log("clicked:", type);
+
+  setFormData((prev) => ({
+    ...prev,
+    acceptedWasteTypes: prev.acceptedWasteTypes.includes(type)
+      ? prev.acceptedWasteTypes.filter((t) => t !== type)
+      : [...prev.acceptedWasteTypes, type],
+  }));
+};
 
   const handleSubmit = async (e) => {
     e.preventDefault();
