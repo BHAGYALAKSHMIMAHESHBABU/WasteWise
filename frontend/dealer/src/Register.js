@@ -112,6 +112,16 @@ const Register = ({ setToken, onSwitch }) => {
               <input type="text" name="phone" placeholder="10-digit mobile" onChange={handleInputChange} required />
             </div>
             <div className="form-group full-width">
+            <label>Business Address</label>
+  <input
+    type="text"
+    name="address"
+    placeholder="Enter full address"
+    onChange={handleInputChange}
+    required
+  />
+</div>
+            <div className="form-group full-width">
               <label>Password</label>
               <input type="password" name="password" placeholder="Min 6 characters" onChange={handleInputChange} required />
             </div>
